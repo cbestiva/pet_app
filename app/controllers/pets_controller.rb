@@ -21,11 +21,11 @@ class PetsController < ApplicationController
 
   def update
     @pet = Pet.find(params[:id])
-    @pet.update_attributes(params[:pet].permit(:name, :age, :type)
+    @pet.update_attributes(params[:pet].permit(:name, :age, :type))
   end
 
   def destroy
-    @pet = Pet.find(params[:id]
+    @pet = Pet.find(params[:id])
     @pet.delete
   end
 
