@@ -4,11 +4,16 @@ class PetsController < ApplicationController
   end
 
   def new
-    @pet = Pet.new(pet_params)
+    @pet = Pet.new
   end
   
   def create
-    @pet = Pet.create(pet_params)
+    @pet = Pet.new(pet_params)
+    if @pet.save
+      redirect_to root_url
+    else
+      render :new
+    end
   end
 
   def show
