@@ -33,6 +33,12 @@ class OwnersController < ApplicationController
   end
 
   def destroy
+    @owner = Owner.find(params[:id])
+    @owner.delete
+
+    respond_to do |f|
+      f.html {redirect_to owners_url}
+    end
   end
 
   private

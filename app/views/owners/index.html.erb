@@ -17,6 +17,7 @@
         <td><%= owner.last_name %></td>
         <td><%= owner.gender %></td>
         <td><%= link_to 'Edit', [:edit, owner] %></td>
+        <td><%= link_to 'Delete', owner, method: :delete %></td>
       </tr>
     <% end %>
   </table>
