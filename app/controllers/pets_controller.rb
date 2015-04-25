@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
   def index
-    Pet.all
+    @pets = Pet.all.order(id: :asc)
   end
 
   def new
@@ -26,7 +26,11 @@ class PetsController < ApplicationController
 
   def update
     @pet = Pet.find(params[:id])
-    @pet.update_attributes(params[:pet].permit(:name, :age, :type))
+    @pet.update_attributes(params[:pet].permit(:name, :age, :pet_type))
+
+    respond_to do |f|
+      f.html {redirect_to pets_url}
+    end
   end
 
   def destroy
@@ -36,6 +40,6 @@ class PetsController < ApplicationController
 
   private
   def pet_params
-    params.require(:pet).permit(:name, :age, :type)
+    params.require(:pet).permit(:name, :age, :pet_type)
   end
 end
