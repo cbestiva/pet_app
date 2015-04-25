@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150424201959) do
   create_table "pets", force: true do |t|
     t.string  "name"
     t.integer "age"
-    t.string  "type"
+    t.string  "pet_type"
   end
 
 end

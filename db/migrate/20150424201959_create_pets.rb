@@ -8,11 +8,11 @@ class CreatePets < ActiveRecord::Migration
     create_table :pets do |t|
       t.string :name
       t.integer :age
-      t.string :type
+      t.string :pet_type
     end
   end
 
   def down
-    dropt_table :pets
+    drop_table :pets
   end
 end
