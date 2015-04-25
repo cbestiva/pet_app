@@ -36,6 +36,10 @@ class PetsController < ApplicationController
   def destroy
     @pet = Pet.find(params[:id])
     @pet.delete
+
+    respond_to do |f|
+      f.html {redirect_to pets_url}
+    end
   end
 
   private
