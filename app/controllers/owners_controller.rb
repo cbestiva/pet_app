@@ -4,9 +4,16 @@ class OwnersController < ApplicationController
   end
 
   def new
+    @owner = Owner.new
   end
 
   def create
+    @owner = Owner.new(owner_params)
+    if @owner.save
+      redirect_to owners_url
+    else
+      render :new
+    end
   end
 
   def show
