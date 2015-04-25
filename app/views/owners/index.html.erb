@@ -7,6 +7,8 @@
       <th>First name</th>
       <th>Last name</th>
       <th>Gender</th>
+      <th></th>
+      <th></th>
     </tr>
     <% @owners.each do |owner| %>
       <tr>
@@ -14,6 +16,7 @@
         <td><%= owner.first_name %></td>
         <td><%= owner.last_name %></td>
         <td><%= owner.gender %></td>
+        <td><%= link_to 'Edit', [:edit, owner] %></td>
       </tr>
     <% end %>
   </table>

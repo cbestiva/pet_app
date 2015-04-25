@@ -20,9 +20,16 @@ class OwnersController < ApplicationController
   end
 
   def edit
+    @owner = Owner.find(params[:id])
   end
 
   def update
+    @owner = Owner.find(params[:id])
+    @owner.update_attributes(params[:owner].permit(:first_name, :last_name, :gender))
+
+    respond_to do |f|
+      f.html {redirect_to owners_url}
+    end
   end
 
   def destroy
