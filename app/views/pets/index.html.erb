@@ -1,1 +1,24 @@
-<h1>Jingling Gate Pets</h1>
+<div class="container">
+  <h1>Jingling Gate Pets</h1>
+  <table class="table table-striped">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Type</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% @pets.each do |p| %>
+      <tr>
+        <td><%= p.id %></td>
+        <td><%= p.name %></td>
+        <td><%= p.age %></td>
+        <td><%= p.pet_type %></td>
+        <td><%= link_to 'Edit', [:edit, p] %>
+        <td><%= link_to 'Delete', p, method: :delete %>
+      </tr>
+    <% end %>
+  </table>
+
+</div>

@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>New Pet</h1>
+  <h1>Edit Pet</h1>
   <%= form_for @pet, html: {class: 'form-horizontal col-sm-4'} do |f| %>
     <% if @pet.errors.any? %>
       <ul>
@@ -26,6 +26,6 @@
         <%= f.text_field :pet_type, class: 'form-control' %>
       </div>
     </div>
-    <%= f.submit 'Add pet', class: 'btn btn-primary pull-right' %>
+    <%= f.submit 'Update pet', class: 'btn btn-primary pull-right' %>
   <% end %>
 </div>
