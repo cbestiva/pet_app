@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425064954) do
+ActiveRecord::Schema.define(version: 20150426021243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,13 +22,10 @@ ActiveRecord::Schema.define(version: 20150425064954) do
     t.string "gender"
   end
 
-  create_table "owners_pets", id: false, force: true do |t|
-    t.integer "owner_id"
-    t.integer "pet_id"
+  create_table "ownerships", force: true do |t|
+    t.integer "owners_id"
+    t.integer "pets_id"
   end
-
-  add_index "owners_pets", ["owner_id"], name: "index_owners_pets_on_owner_id", using: :btree
-  add_index "owners_pets", ["pet_id"], name: "index_owners_pets_on_pet_id", using: :btree
 
   create_table "pets", force: true do |t|
     t.string  "name"

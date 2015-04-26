@@ -1,7 +1,8 @@
 class Pet < ActiveRecord::Base
   validates_presence_of :name
   before_save :capitalize_name, :capitalize_type
-  has_and_belongs_to_many :owners
+  has_many :ownerships
+  has_many :owners, thorugh: :ownerships
 
   def capitalize_name
     self.name = self.name.capitalize

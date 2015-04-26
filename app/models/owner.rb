@@ -1,7 +1,8 @@
 class Owner < ActiveRecord::Base
   validates_presence_of :first_name, :last_name
   before_save :capitalize_first_name, :capitalize_last_name
-  has_and_belongs_to_many :pets
+  has_many :ownerships
+  has_many :pets, through: :ownerships
 
   def capitalize_first_name
     self.first_name = self.first_name.capitalize
