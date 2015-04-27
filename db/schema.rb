@@ -17,20 +17,30 @@ ActiveRecord::Schema.define(version: 20150426021243) do
   enable_extension "plpgsql"
 
   create_table "owners", force: true do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "gender"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "gender"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "ownerships", force: true do |t|
-    t.integer "owners_id"
-    t.integer "pets_id"
+    t.integer  "owner_id"
+    t.integer  "pet_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
+  add_index "ownerships", ["owner_id", "pet_id"], name: "index_ownerships_on_owner_id_and_pet_id", unique: true, using: :btree
+  add_index "ownerships", ["owner_id"], name: "index_ownerships_on_owner_id", using: :btree
+  add_index "ownerships", ["pet_id"], name: "index_ownerships_on_pet_id", using: :btree
+
   create_table "pets", force: true do |t|
-    t.string  "name"
-    t.integer "age"
-    t.string  "pet_type"
+    t.string   "name"
+    t.integer  "age"
+    t.string   "pet_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
