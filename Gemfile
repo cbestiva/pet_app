@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record
 gem 'pg'
+# Heroku gems to add
+gem 'rails_12factor'
+ruby '2.0.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
