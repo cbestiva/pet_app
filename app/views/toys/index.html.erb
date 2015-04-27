@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Toys list</h1>
+  <nav class="nav nav-pills pull-right">
+    <li role="presentation"><%= link_to 'Owners', owners_url %></li>
+    <li role="presentation"><%= link_to 'Ownerships', ownerships_url %></li>
+    <li role="presentation"><%= link_to 'Pets', pets_url %></li>
+    <li role="presentation" class="active"><%= link_to 'Toys', toys_url %></li>
+  </nav>
+  <div class="col-sm-12 text-right">
+    <%= link_to 'Add toy', new_toy_url %>
+  </div>
+  <table class="table table-striped">
+    <tr>
+      <th>Id#</th>
+      <th>Type</th>
+      <th>Color</th>
+      <th>Belongs to pet</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% @toys.each do |t| %>
+      <tr>
+        <td><%= t.id %></td>
+        <td><%= t.name %></td>
+        <td><%= t.color %></td>
+        <td><%= t.pet.name %></td>
+        <td><%= link_to 'Edit', [:edit, t]%></td>
+        <td><%= link_to 'Delete', t, method: :destroy %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
