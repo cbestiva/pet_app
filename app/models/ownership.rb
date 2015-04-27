@@ -1,4 +1,4 @@
 class Ownership < ActiveRecord::Base
-  belongs_to :owner
-  belongs_to :pet
+  belongs_to :owner, dependent: :destroy
+  belongs_to :pet, dependent: :destroy
 end
