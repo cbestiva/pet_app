@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
   root 'pets#index'
-  resources :pets, :owners
-  resources :ownerships, only:[:index, :new, :create]
+  resources :pets, :owners, :ownerships, except:[:show]
 end
