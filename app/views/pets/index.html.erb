@@ -7,6 +7,7 @@
       <th>Name</th>
       <th>Age</th>
       <th>Type</th>
+      <th>Owners</th>
       <th></th>
       <th></th>
     </tr>
@@ -16,8 +17,9 @@
         <td><%= p.name %></td>
         <td><%= p.age %></td>
         <td><%= p.pet_type %></td>
-        <td><%= link_to 'Edit', [:edit, p] %>
-        <td><%= link_to 'Delete', p, method: :delete %>
+        <td><%= p.owners.map{|o| o.first_name}.to_sentence %></td>
+        <td><%= link_to 'Edit', [:edit, p] %></td>
+        <td><%= link_to 'Delete', p, method: :delete %></td>
       </tr>
     <% end %>
   </table>

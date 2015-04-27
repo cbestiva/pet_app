@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Ownership</h1>
+  <%= form_for @ownership do |f| %>
+    <p><%= f.collection_select :owner_id, @owners, :id, :first_name %><p>
+    <p>owns</p>
+    <p><%= f.collection_select :pet_id, @pets, :id, :name %></p>
+    <%= f.submit 'Create ownership', class: 'btn btn-primary' %>
+  <% end %>
+</div>
