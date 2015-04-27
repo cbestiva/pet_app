@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Ownerships List</h1>
+  <nav class="pull-right">
+    <%= link_to 'Owners', owners_url %>
+    <%= link_to 'Pets', pets_url %>
+  </nav> 
+  <div class="col-sm-12 text-right">
+    <%= link_to 'Add ownership', new_ownership_url %>
+  </div>
+  <table class="table table-striped">
+    <tr>
+      <th>Id#</th>
+      <th>Owner</th>
+      <th>Pet</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% @ownerships.each do |ownership| %>
+      <tr>
+        <td><%= ownership.id %></td>
+        <td><%= ownership.owner.first_name %></td>
+        <td><%= ownership.pet.name %></td>
+        <td><%= link_to 'Edit', [:edit, ownership] %></td>
+        <td><%= link_to 'Delete', ownership, method: :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

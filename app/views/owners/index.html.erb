@@ -1,6 +1,12 @@
 <div class="container">
   <h1>Owners List</h1>
-  <%= link_to 'Add owner', new_owner_url, class: 'pull-right' %>
+  <nav class="pull-right">
+    <%= link_to 'Pets', pets_url %>
+    <%= link_to 'Ownerships', ownerships_url %>
+  </nav>  
+  <div class="col-sm-12 text-right">
+    <%= link_to 'Add owner', new_owner_url %>
+  </div>
   <table class="table table-striped">
     <tr>
       <th>Id#</th>

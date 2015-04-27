@@ -1,6 +1,10 @@
 <div class="container">
   <h1>Jingling Gate Pets</h1>
-  <%= link_to 'Add pet', new_pet_url, class: 'pull-right' %>
+  <nav class="pull-right">
+    <%= link_to 'Owners', owners_url %>
+    <%= link_to 'Ownerships', ownerships_url %>
+  </nav>
+  <div class="col-sm-12 text-right"><%= link_to 'Add pet', new_pet_url%></div>
   <table class="table table-striped">
     <tr>
       <th>Id#</th>
