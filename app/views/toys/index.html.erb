@@ -25,7 +25,7 @@
         <td><%= t.color %></td>
         <td><%= t.pet.name %></td>
         <td><%= link_to 'Edit', [:edit, t]%></td>
-        <td><%= link_to 'Delete', t, method: :destroy %></td>
+        <td><%= link_to 'Delete', t, method: :delete %></td>
       </tr>
     <% end %>
   </table>
