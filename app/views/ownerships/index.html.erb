@@ -1,9 +1,11 @@
 <div class="container">
   <h1>Ownerships List</h1>
-  <nav class="pull-right">
-    <%= link_to 'Owners', owners_url %>
-    <%= link_to 'Pets', pets_url %>
-  </nav> 
+  <nav class="nav nav-pills pull-right">
+    <li role="presentation"><%= link_to 'Owners', owners_url %></li>
+    <li role="presentation" class="active"><%= link_to 'Ownerships', ownerships_url %></li>
+    <li role="presentation"><%= link_to 'Pets', pets_url %></li>
+    <li role="presentation"><%= link_to 'Toys', toys_url %></li>
+  </nav>
   <div class="col-sm-12 text-right">
     <%= link_to 'Add ownership', new_ownership_url %>
   </div>
