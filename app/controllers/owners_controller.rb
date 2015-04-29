@@ -5,10 +5,13 @@ class OwnersController < ApplicationController
 
   def new
     @owner = Owner.new
+    @pets = Pet.all
+    2.times {@owner.ownerships.build}
   end
 
   def create
     @owner = Owner.new(owner_params)
+    
     if @owner.save
       redirect_to owners_url
     else
@@ -43,6 +46,6 @@ class OwnersController < ApplicationController
 
   private
   def owner_params
-    params.require(:owner).permit(:first_name, :last_name, :gender)
+    params.require(:owner).permit(:first_name, :last_name, :gender, ownerships_attributes: [:pet_id])
   end
 end

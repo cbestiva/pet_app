@@ -26,6 +26,12 @@
         <%= f.select(:gender, ['Female', 'Male'], {include_blank: ''}, {class: 'form-control'}) %>
       </div>
     </div>
+    <div class="form-group">
+      <p class="col-sm-4"><b>Pets</b></p>
+        <%= f.fields_for :ownerships do |builder| %>
+          <%= builder.collection_select :pet_id, @pets, :id, :name, include_blank: true %>
+        <% end %>
+    </div>
     <%= f.submit 'Add owner', class: 'btn btn-primary pull-right' %>
   <% end %>
 </div>
