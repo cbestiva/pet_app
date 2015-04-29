@@ -4,6 +4,7 @@ class Pet < ActiveRecord::Base
   has_many :ownerships
   has_many :owners, through: :ownerships
   has_many :toys
+  has_and_belongs_to_many :shirts
 
   def capitalize_name
     self.name = self.name.capitalize

@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>New shirt</h1>
+  <%= form_for @shirt, html: {class: 'form-horizontal col-sm-4'} do |f| %>
+    <div class="form-group">
+      <%= f.label :color, class: 'col-sm-4' %>
+      <div class="col-sm-8">
+        <%= f.text_field :color, class:'form-control' %>
+      </div>
+    </div>
+    <!--<#% f.fields_for :pets do |builder| %>
+      <div class="from-group">
+        <#%= builder.label :name %>
+        <#%= builder.collection_select :pet_id, @pets, :id, :name, rows: 3 %>
+      </div>
+    <#% end %>--> 
+    <div class="form-group">
+      <div class="col-sm-4">
+        <b>Pets</b>
+      </div>
+      <div class="col-sm-4">
+        <%= select_tag 'pet_id1', options_for_select(@pets.collect{ |p| [p.name, p.id]}), include_blank: true %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-4 col-sm-offset-4">
+        <%= select_tag 'pet_id2', options_for_select(@pets.collect{ |p| [p.name, p.id]}), include_blank: true %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-4 col-sm-offset-4">
+        <%= select_tag 'pet_id3', options_for_select(@pets.collect{ |p| [p.name, p.id]}), include_blank: true %>
+      </div>
+    </div>
+    <%= f.submit 'Add shirt', class:'btn btn-primary pull-right' %>
+  <% end %>
+</div>

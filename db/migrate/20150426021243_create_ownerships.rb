@@ -6,8 +6,8 @@ class CreateOwnerships < ActiveRecord::Migration
 
   def up
     create_table :ownerships do |t|
-      t.integer :owner_id
-      t.integer :pet_id
+      t.references :owner
+      t.references :pet
       t.timestamps
     end
     add_index :ownerships, :owner_id
